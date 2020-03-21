@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <title>Super AH</title>
+</head>
+<body onload="setup()">
+    <div class="container">
+        <div class="topBox">
+            <button id="prev" onclick="prev()">Vorig <br><span class="smaller">product</span></button>
+            <h1 id="product"></h1>
+            <button id="next" onclick="next()">Volgend <br><span class="smaller">product</span></button>
+        </div>
+
+        <div id="middleBox">
+                    
+            <div id="plane">
+            </div>
+        </div>
+        <!-- <div class="bottomBox">
+            <h3>Product toevoegen aan lijst</h3>
+            <input placeholder="Product" type="text" id="numb">
+            <button type="button" onclick="addProduct()">Toevoegen</button>
+        </div> -->
+    </div>
+
+    <script src="main.js"></script>
+    <script src="plane.js"></script>
+</body>
+</html>
