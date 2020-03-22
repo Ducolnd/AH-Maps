@@ -1,7 +1,7 @@
 var diameter = 5;
 var padbreedte = 25;
 var dikte = 15;
-var start = 414;
+var begin = 414;
 var colorCodes = {
     "divers": "#3B9FE2",
     "koel": "lightblue",
@@ -13,7 +13,7 @@ var colorCodes = {
 var mark;
 
 function yReturn(q, n) {
-    return n*(dikte*q + padbreedte) + start
+    return n*(dikte*q + padbreedte) + begin
 }
 
 class Pad {
@@ -102,6 +102,32 @@ class Pad {
         ctx.stroke();
 
     }
+
+    getMeterCoord(m) {
+        if(this.rotate) {
+
+        } else {
+            if(this.double) {
+                var interval = this.width / this.oneMeters;
+                if(m > this.oneMeters) {
+                    console.log(interval)
+                    var y = this.y + this.padWidth + (1.5 * this.height);
+                    var x = this.x + this.width - ((interval * (m-this.oneMeters)) - (0.5 * interval));
+                }
+                else {
+                    var y = this.y + (0.5 * this.height);
+                    var x = this.x + ((interval * m) - (0.5 * interval));
+                }
+                return [x, y];
+
+            } else {
+                var interval = this.width / this.meters;
+                var x = this.x + ((interval * m) - (0.5 * interval));
+                var y = this.y + (0.5 * this.height);
+                return [x, y];
+            }
+        }
+    }
 }
 
 var area = {
@@ -118,7 +144,7 @@ var area = {
     [500,0],
     [0,0]],
     plan: [
-        new Pad(50, start, 150, dikte, 10, "divers", 3, false, true, padbreedte),
+        new Pad(50, begin, 150, dikte, 10, "divers", 3, false, true, padbreedte),
         new Pad(50, yReturn(2, 1), 150, dikte, 20, "actie", 4, false, true, padbreedte),
         new Pad(50, yReturn(2, 2), 150, dikte, 10, "divers", 5, false, true, padbreedte),
         new Pad(50, yReturn(2, 3), 150, dikte, 10, "divers", 6, false, true, padbreedte),
@@ -126,7 +152,7 @@ var area = {
         new Pad(50, yReturn(2, 5), 150, dikte, 10, "divers", 8, false, true, padbreedte),
         new Pad(50, yReturn(2, 6), 150, dikte, 10, "divers", 9, false, true, padbreedte),
 
-        new Pad(275, start, 150, dikte, 10, "divers", 16, false, true, padbreedte),
+        new Pad(275, begin, 150, dikte, 10, "divers", 16, false, true, padbreedte),
         new Pad(275, yReturn(2, 1), 150, dikte, 10, "divers", 15, false, true, padbreedte),
         new Pad(275, yReturn(2, 2), 150, dikte, 10, "divers", 14, false, true, padbreedte),
         new Pad(275, yReturn(2, 3), 150, dikte, 10, "divers", 13, false, true, padbreedte),
@@ -203,4 +229,7 @@ function update() {
 function setup() {
     mark = new dot(10, 120);
     area.start();
+    currentClass = findClass(groch[index].location[0])
+    mark.x = currentClass.x;
+    mark.y = currentClass.y;
 }
