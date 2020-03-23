@@ -46,8 +46,8 @@ class Pad {
         ctx.fillRect(this.x, this.y, this.width, this.height);
 
         ctx.beginPath();
-        ctx.strokeStyle = "#575656";
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = "#f2f2f2";
+        ctx.lineWidth = 0.3;
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(this.x + this.width, this.y);
         ctx.lineTo(this.x + this.width, this.y + this.height);
@@ -164,7 +164,7 @@ var area = {
         new Pad(275, begin, 150, dikte, 10, "divers", 16, false, true, padbreedte),
         new Pad(275, yReturn(2, 1), 150, dikte, 10, "divers", 15, false, true, padbreedte),
         new Pad(275, yReturn(2, 2), 150, dikte, 10, "divers", 14, false, true, padbreedte),
-        new Pad(275, yReturn(2, 3), 150, dikte, 22, "divers", 13, false, true, padbreedte),
+        new Pad(275, yReturn(2, 3), 150, dikte, 16, "divers", 13, false, true, padbreedte),
         new Pad(275, yReturn(2, 4), 150, dikte, 10, "divers", 12, false, true, padbreedte),
         new Pad(275, yReturn(2, 5), 150, dikte, 10, "divers", 11, false, true, padbreedte),
         new Pad(275, yReturn(2, 6), 150, dikte, 10, "actie", 10, false, true, padbreedte),
@@ -187,8 +187,8 @@ var area = {
     base: function() {
         ctx = this.context;
         ctx.globalAlpha = 1;
-        ctx.fillStyle = "red";
-        ctx.lineWidth = 2.5;
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 1.5;
 
         ctx.beginPath();
         ctx.moveTo(this.outside[0][0]+10,this.outside[0][1]+10);
