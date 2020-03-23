@@ -114,16 +114,27 @@ canvas {
     width: 100%;
 }
 
+
 .bottomBox {
     height: 200px;
+    overflow: scroll;
 }
 
 .bottomBox h1 {
-    font: 17px "Nunito Sans", sans-serif;
+    font: 17px "Heebo", sans-serif;
+    font-weight: 700;
+    text-align: center;
+    border-bottom: 1px lightgray solid;
+}
+
+.bottomBox p {
+    font: 17px "Heebo", sans-serif;
+    text-align: center;
 }
 
 .bottomBox .textBox {
     float: left;
+    width: 50%;
 }
 
 .bottomBox .rightImg {
