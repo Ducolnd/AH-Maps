@@ -6,7 +6,7 @@ function product(name, location, description, voorraad) {
 }
 
 var producten = {
-    appels: new product("Appels", [3, 2, 7, 2], "Zoetzure appels met een tint van zout. Lekker goudbruin zonder pitten.", 32),
+    appels: new product("Appels", [3, 2, 7, 2], "Zoetzure appels met een tint van zout. Lekker goudbruin zonder pitten", 32),
     kaas: new product("Kaas", [4, 4, 7, 2], "Heel lekker", 32),
     brood: new product("Brood", [5, 4, 7, 2], "Heel lekker", 32),
     chips: new product("Chips", [6, 4, 7, 2], "Heel lekker", 32),
