@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap" rel="stylesheet">    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Super AH</title>
 </head>
-<body onload="setup()">
+<body onresize="resizeDiv();" onload="setup(); resizeDiv();">
     <div class="container">
         <div class="topBox">
             <button id="prev" onclick="prev()">Vorig <br><span class="smaller">product</span></button>
@@ -22,17 +22,18 @@
             </div>
         </div>
 
-        <div class="bottomBox">
+        <div id="heightItem" class="bottomBox">
             <div class="textBox">
                 <h1>Product naam:</h1>
                 <p id="productName"></p>
                 <h1>Locatie product</h1>
                 <p id="productLocation"></p>
                 <h1>Beschrijving</h1>
-                <p id="productDescription">lorem</p>
+                <p id="productDescription"></p>
             </div>
             <div class="rightImg">
-                <img src="../static/london.jpg" alt="wasa">
+                <img id="productImage" src="../static/london.jpg" alt="wasa">
+                <img id="shelfImage" src="../static/wasa.jpg" alt="wasa">
             </div>
         </div>
     </div>

@@ -13,6 +13,11 @@ var producten = {
     bonen: new product("Bonen", [7, 4, 7, 2], "Heel lekker", 32),
 }
 
+function resizeDiv() {
+    var amount = (window.innerHeight - (100+450))*0.70;
+    document.getElementById("heightItem").style.height = `${amount}px`;
+}
+
 var groch = [producten.appels, producten.kaas, producten.brood, producten.chips, producten.bonen];
 
 var index = 0
