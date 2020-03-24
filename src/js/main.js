@@ -26,7 +26,6 @@ var productDescription = $("#productDescription");
 
 product.html(start);
 changeInfo(groch[index]);
-document.getElementById("middleBox").style.height = window.innerHeight - 100;
 
 function next() {
     if(index == groch.length-1) {
@@ -62,7 +61,7 @@ function prev() {
 function changeInfo(list) {
     var format = list.location;
 
-    productLocation.html(`Pad ${format[0]}  Meter ${format[1]} <br> Rang ${format[2]} Jada ${format[3]}`);
+    productLocation.html(`Pad ${format[0]}  Meter ${format[1]} <br> Plank ${format[2]} Rang ${format[3]}`);
     productName.html(list.name);
     productDescription.html(list.description);
 }

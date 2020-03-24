@@ -1,9 +1,9 @@
 html, body {
     margin: 0;
     height: 100%;
-    overflow-x: hidden;
-    /* overflow: hidden; */
-    background-color: lightsalmon;
+    /* overflow-x: hidden; */
+    overflow: hidden;
+    background-color: white;
 }
 
 h1 {
@@ -114,11 +114,15 @@ canvas {
     width: 100%;
 }
 
+@media only screen and (max-height: 100px) {
 
+}
 .bottomBox {
-    height: 24%;
+    height: 25%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    padding-top: 14px;
+    /* overflow-x: hidden; */
+    /* padding-bottom: 200px; */
 }
 
 .bottomBox h1 {
@@ -136,8 +140,8 @@ canvas {
 .bottomBox .textBox {
     float: left;
     width: 50%;
-    margin-top: 14px;
     height: 100%;
+    padding-bottom: 120px;
 }
 
 .bottomBox .rightImg {
@@ -151,7 +155,6 @@ canvas {
     width: 100%;
     max-width: 200px;
     height: auto;
-    margin-top: 14px;
     padding: 0;
 }
 
