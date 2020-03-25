@@ -1,0 +1,63 @@
+body, html {
+    margin: 0;
+    font-family: "Nunito Sans", sans-serif;;
+}
+
+.bottomNav {
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+.bottomNav img {
+    float: left;
+    display: block;
+    width: 40px;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+.bottomNav a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font: 17px "Nunito Sans", sans-serif;
+}
+
+.bottomNav .centered {
+    width: 400px;
+    margin: 0 auto;
+}
+
+a.active {
+    /* background-color: rgb(17, 142, 224); */
+    text-decoration: underline;
+}
+
+.bottomNav a:hover {
+    text-decoration: underline;
+    /* background-color: rgb(98, 167, 212); */
+    color: rgb(88, 92, 93);
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.front {
+    margin-top: 100px;
+}
+
+.front h2 {
+    text-align: center;
+}
+
+.front h3 a {
+    color: #FF7900;
+}
