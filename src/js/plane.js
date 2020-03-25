@@ -142,10 +142,6 @@ class Pad {
 var area = {
     container: document.getElementById("plane"),
     canvas: document.createElement("canvas"),
-
-    size: [document.getElementById("plane").clientWidth,
-            document.getElementById("plane").clientHeight],
-
     
     outside: [[0,0],
     [0,800],
@@ -171,8 +167,15 @@ var area = {
     ],
 
     start: function() {
-        this.canvas.width = 520;
-        this.canvas.height = 1020;
+        var xMax = [];
+        var yMax = [];
+        for(var i of this.outside) {
+            xMax.push(i[0]);
+            yMax.push(i[1]);
+        }
+        console.log(Math.max.apply(null, xMax))
+        this.canvas.width = Math.max.apply(null, xMax) + 20;
+        this.canvas.height = Math.max.apply(null, yMax) + 20;
         this.canvas.style.backgroundColor = "white";
         this.context = this.canvas.getContext("2d");
 
@@ -206,7 +209,8 @@ var area = {
 function dot(x, y) {
     this.x = x;
     this.y = y;
-    this.diameter = 0;    
+    this.diameter = 0;
+
     this.update = function(){
         this.diameter += 0.4
         if(this.diameter > 15) {
@@ -218,6 +222,7 @@ function dot(x, y) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.diameter, 0, 2 * Math.PI, false);
         ctx.fill();
+        
     }
 }
 

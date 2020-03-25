@@ -1,20 +1,20 @@
-function product(name, location, description, voorraad) {
+function product(name, location, description, bonus) {
     this.name = name;
     this.location = location; // [pad, meter, rang, ...]
     this.description = description;
-    this.voorraad = voorraad;
+    this.bonus = bonus
 }
 
 var producten = {
-    appels: new product("Appels", [3, 2, 7, 2], "Zoetzure appels met een tint van zout. Lekker goudbruin zonder pitten", 32),
-    kaas: new product("Kaas", [4, 4, 7, 2], "Heel lekker", 32),
-    brood: new product("Brood", [5, 4, 7, 2], "Heel lekker", 32),
-    chips: new product("Chips", [6, 4, 7, 2], "Heel lekker", 32),
-    bonen: new product("Bonen", [7, 4, 7, 2], "Heel lekker", 32),
+    appels: new product("Appels", [3, 2, 7, 2], "Zoetzure appels met een tint van zout. Lekker goudbruin zonder pitten", true),
+    kaas: new product("Kaas", [4, 4, 7, 2], "Heel lekker", false),
+    brood: new product("Brood", [5, 4, 7, 2], "Heel lekker", false),
+    chips: new product("Chips", [6, 4, 7, 2], "Heel lekker", false),
+    bonen: new product("Bonen", [7, 4, 7, 2], "Heel lekker", false),
 }
 
 function resizeDiv() {
-    var amount = (window.innerHeight - (100+450))*0.70;
+    var amount = (window.innerHeight - (100+450))*0.76;
     document.getElementById("heightItem").style.height = `${amount}px`;
 }
 
@@ -65,8 +65,16 @@ function prev() {
 
 function changeInfo(list) {
     var format = list.location;
+    var bonusString = "<h1 id='bonus'>Bonus</h1>";
 
     productLocation.html(`Pad ${format[0]}  Meter ${format[1]} <br> Plank ${format[2]} Rang ${format[3]}`);
     productName.html(list.name);
     productDescription.html(list.description);
+
+    if(list.bonus) {
+        $("#bonus").html(bonusString);
+        $("#bonus").show();
+    } else {
+        $("#bonus").hide();
+    }
 }

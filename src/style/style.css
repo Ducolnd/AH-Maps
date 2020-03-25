@@ -9,7 +9,7 @@ html, body {
 h1 {
     padding: 0;
     margin: 0;
-    font: 50px Helvetica;
+    font: 50px "Nunito Sans", Helvetica;
 }
 
 .container {
@@ -76,10 +76,8 @@ ul li {
 #middleBox {
     padding: 0px;
     height: 450px;
-    /* margin: 0 auto; */
     background-color:white;
     display: flex;
-    border-bottom: 2px black solid;
 }
 
 #plane {
@@ -117,17 +115,25 @@ canvas {
 .bottomBox {
     overflow-y: scroll;
     padding-top: 14px;
+    border-top: 1px solid lightgrey;
 }
 
 .bottomBox h1 {
-    font: 17px "Heebo", sans-serif;
+    font: 17px "Nunito Sans", sans-serif;
     font-weight: 700;
     text-align: center;
     border-bottom: 1px lightgray solid;
 }
 
+#bonus {
+    color: #FF7900;
+    border: none;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
 .bottomBox p {
-    font: 17px "Heebo", sans-serif;
+    font: 17px "Nunito Sans", sans-serif;
     text-align: center;
 }
 
@@ -153,25 +159,34 @@ canvas {
 
 @media only screen and (min-width: 1200px) {
     .bottomBox img {
-        height: 50%;
+        height: 100%;
         width: auto;
         max-width: none;
     }
 }
 
 .bottomNav {
-    /* display: none; */
     overflow: hidden;
     position: fixed;
     bottom: 0;
     width: 100%;
-    background-color: #3B9FE2;
+    background-color: white;
+    border-top: 1px solid lightgrey;
+}
+
+.bottomNav img {
+    float: left;
+    display: block;
+    width: 40px;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
 }
 
 .bottomNav a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -184,10 +199,12 @@ canvas {
 }
 
 a.active {
-    background-color: rgb(17, 142, 224);
+    /* background-color: rgb(17, 142, 224); */
+    text-decoration: underline;
 }
 
 .bottomNav a:hover {
     text-decoration: underline;
-    background-color: rgb(98, 167, 212);
+    /* background-color: rgb(98, 167, 212); */
+    color: rgb(88, 92, 93);
 }
