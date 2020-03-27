@@ -206,15 +206,22 @@ var area = {
     },
 }
 
-function dot(x, y) {
+function dot(x, y, imageUrl, imgWidth) {
     this.x = x;
     this.y = y;
+    this.startDiameter = 10;
+    this.maxDiameter = 20;
     this.diameter = 0;
+
+    this.img = new Image();
+    this.img.src = imageUrl;
+    this.imgWidth = imgWidth
+    this.imgHeight = this.img.height/(this.img.width / imgWidth)
 
     this.update = function(){
         this.diameter += 0.4
-        if(this.diameter > 15) {
-            this.diameter = diameter;
+        if(this.diameter > this.maxDiameter) {
+            this.diameter = this.startDiameter
         } 
         ctx = area.context;
         ctx.globalAlpha = 0.5;
@@ -222,6 +229,8 @@ function dot(x, y) {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.diameter, 0, 2 * Math.PI, false);
         ctx.fill();
+        ctx.globalAlpha = 0.7;
+        ctx.drawImage(this.img, this.x-(this.imgWidth/2), this.y-(this.imgHeight/2), this.imgWidth, this.imgHeight);
         
     }
 }
@@ -241,7 +250,7 @@ function update() {
 }
 
 function setup() {
-    mark = new dot(10, 120);
+    mark = new dot(10, 120, "../static/london.jpg", 25);
     area.start();
     currentClass = findClass(groch[index].location[0]).getMeterCoord(groch[index].location[1])
     mark.x = currentClass[0];
