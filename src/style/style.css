@@ -102,10 +102,10 @@ canvas {
 #next {
     float: right;
 }
-
+/* 
 #plane::-webkit-scrollbar {
     display: none;
-}
+} */
 
 #plane {
     overflow: scroll;

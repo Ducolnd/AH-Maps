@@ -1,7 +1,11 @@
 var diameter = 5;
-var padbreedte = 25;
-var dikte = 15;
+var padbreedte = 50;
+var padLengte = 300;
+var dikte = 20;
 var begin = 414;
+var yFirst = 100;
+var ySecond = yFirst + 400 ;
+
 var colorCodes = {
     "divers": "#3B9FE2",
     "koel": "lightblue",
@@ -142,28 +146,32 @@ class Pad {
 var area = {
     container: document.getElementById("plane"),
     canvas: document.createElement("canvas"),
+
     
     outside: [[0,0],
-    [0,800],
-    [500,800],
-    [500,0],
+    [0,1600],
+    [1000,1600],
+    [1000,0],
     [0,0]],
-    plan: [
-        new Pad(50, begin, 150, dikte, 10, "divers", 3, false, true, padbreedte),
-        new Pad(50, yReturn(2, 1), 150, dikte, 16, "actie", 4, false, true, padbreedte),
-        new Pad(50, yReturn(2, 2), 150, dikte, 10, "divers", 5, false, true, padbreedte),
-        new Pad(50, yReturn(2, 3), 150, dikte, 10, "divers", 6, false, true, padbreedte),
-        new Pad(50, yReturn(2, 4), 150, dikte, 18, "divers", 7, false, true, padbreedte),
-        new Pad(50, yReturn(2, 5), 150, dikte, 10, "divers", 8, false, true, padbreedte),
-        new Pad(50, yReturn(2, 6), 150, dikte, 10, "divers", 9, false, true, padbreedte),
 
-        new Pad(275, begin, 150, dikte, 10, "divers", 16, false, true, padbreedte),
-        new Pad(275, yReturn(2, 1), 150, dikte, 10, "divers", 15, false, true, padbreedte),
-        new Pad(275, yReturn(2, 2), 150, dikte, 10, "divers", 14, false, true, padbreedte),
-        new Pad(275, yReturn(2, 3), 150, dikte, 16, "divers", 13, false, true, padbreedte),
-        new Pad(275, yReturn(2, 4), 150, dikte, 10, "divers", 12, false, true, padbreedte),
-        new Pad(275, yReturn(2, 5), 150, dikte, 10, "divers", 11, false, true, padbreedte),
-        new Pad(275, yReturn(2, 6), 150, dikte, 10, "actie", 10, false, true, padbreedte),
+    outsideSize: [1000, 1600],
+
+    plan: [
+        new Pad(yFirst, begin, padLengte, dikte, 26, "divers", 3, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 1), padLengte, dikte, 26, "actie", 4, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 2), padLengte, dikte, 26, "divers", 5, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 3), padLengte, dikte, 26, "divers", 6, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 4), padLengte, dikte, 26, "divers", 7, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 5), padLengte, dikte, 26, "divers", 8, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 6), padLengte, dikte, 26, "divers", 9, false, true, padbreedte),
+
+        new Pad(ySecond, begin, padLengte, dikte, 26, "divers", 16, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 1), padLengte, dikte, 26, "divers", 15, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 2), padLengte, dikte, 26, "divers", 14, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 3), padLengte, dikte, 26, "divers", 13, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 4), padLengte, dikte, 26, "divers", 12, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 5), padLengte, dikte, 26, "divers", 11, false, true, padbreedte),
+        new Pad(ySecond, yReturn(2, 6), padLengte, dikte, 26, "actie", 10, false, true, padbreedte),
     ],
 
     start: function() {
@@ -255,4 +263,10 @@ function setup() {
     currentClass = findClass(groch[index].location[0]).getMeterCoord(groch[index].location[1])
     mark.x = currentClass[0];
     mark.y = currentClass[1];
+}
+
+function scaleCanvas(x, y) {
+    area.clear();
+    area.outsideSize = [Math.round(area.outsideSize[0]*x), Math.round(area.outsideSize[1]*y)]
+    area.context.scale(x, y);
 }
