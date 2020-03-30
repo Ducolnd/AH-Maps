@@ -1,23 +1,29 @@
 var productInput = $("#productText");
 var htmlString = "";
+var readyInList = $("#readyInList");
+readyInList.hide();
 // var groch = [producten....]
 
 function addProduct() {
-    if(!(product.val() == "")) {
-		groch.push(producten[ productInput.val().toLowerCase() ]);
-		productInput.val("");
-		refreshTable();
+	readyInList.hide()
+    if(!(productInput.val() == null)) {
+		if(inObject(producten, productInput.val())) {
+			if(!(inList(groch, productInput.val()))) {
+				groch.push(producten[ productInput.val().toLowerCase() ]);
+				productInput.val("");
+				refreshTable();
+			} else { readyInList.show() }
+		}
 	}
 }
 
 function refreshTable() {
 	for(var product of groch) {
 		htmlString += `<tr>
+		<td><img src="../static/${product.barCode}.jpg"></img></td>
 		<td>${product.name}</td>
-		<td>${product.name}</td>
-		<td>${product.name}</td>
-		<td>${product.name}</td>
-		
+		<td>${product.description}</td>
+		<td>${product.location}</td>
 		</tr>`
 	}
 	$("#productTable").html(htmlString);
@@ -43,6 +49,22 @@ function setCookie(cname, cvalue, exdays) {
 
 function barCodeReturn() {
     return Math.ceil(Math.random() * 10e9);
+}
+
+function inObject(list, item) {
+	if(Object.keys(list).indexOf(item.toLowerCase()) > -1) {
+		return true
+	} 
+	return false
+}
+
+function inList(list, item) {
+	for(var a of list) {
+		if(a.name.toLowerCase() == item.toLowerCase()) {
+			return true
+		}
+	}
+	return false
 }
 
 // for(var i = 0; i < 1000; i++) {

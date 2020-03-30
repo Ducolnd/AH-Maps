@@ -67,10 +67,36 @@ a.active {
     color: #FF7900;
 }
 
+.make {
+    margin: 0 auto;
+    width: 200px;
+}
+
+.make input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.make input:focus {
+    border: 3px solid #555;
+    outline: none;
+}
+
+.make button {
+    width: 100%;
+    padding: 10px 0px;
+}
+
 .current {
     margin-top: 100px;
 }
 
 .current h2 {
     text-align: center;
+    margin-bottom: 30px;
+}
+
+.current img {
+    max-width: 100px;
 }

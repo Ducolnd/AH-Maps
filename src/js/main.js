@@ -9,9 +9,9 @@ function product(name, location, description, bonus, barCode) {
 var producten = {
     appels: new product("Appels", [3, 2, 7, 2], "Zoetzure appels met een tint van zout. Lekker goudbruin zonder pitten", true, "576567"),
     kaas: new product("Kaas", [4, 4, 7, 2], "Heel lekker", false, "23453463"),
-    brood: new product("Brood", [5, 4, 7, 2], "Heel lekker", false, "243685"),
-    chips: new product("Chips", [6, 20, 7, 2], "Heel lekker", false, "152745"),
-    bonen: new product("Bonen", [7, 4, 7, 2], "Heel lekker", false, "34647"),
+    brood: new product("Brood", [5, 4, 7, 2], "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio esse impedit soluta magni, voluptatem fugiat ipsam a placeat amet facere, veniam consequuntur odit possimus quo ducimus cumque eum laboriosam sint?", false, "243685"),
+    chips: new product("Chips", [6, 20, 7, 2], "Super krokant", false, "152745"),
+    bonen: new product("Bonen", [7, 4, 7, 2], "Typisch hollands", false, "34647"),
 }
 
 function resizeDiv() {
