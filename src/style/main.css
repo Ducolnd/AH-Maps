@@ -51,13 +51,26 @@ a.active {
 }
 
 .front {
-    margin-top: 100px;
+    width: 400px;
+    margin: 100px auto 40px auto;
 }
 
 .front h2 {
     text-align: center;
 }
 
-.front h3 a {
+.front h4 {
+    text-align: center;
+}
+
+.front h4 a {
     color: #FF7900;
+}
+
+.current {
+    margin-top: 100px;
+}
+
+.current h2 {
+    text-align: center;
 }

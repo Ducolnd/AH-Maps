@@ -1,8 +1,8 @@
 var diameter = 5;
 var padbreedte = 50;
 var padLengte = 300;
-var dikte = 20;
-var begin = 414;
+var dikte = 15;
+var begin = 100;
 var yFirst = 100;
 var ySecond = yFirst + 400 ;
 
@@ -51,7 +51,13 @@ class Pad {
 
         ctx.beginPath();
         ctx.strokeStyle = "#f2f2f2";
-        ctx.lineWidth = 0.3;
+        ctx.lineWidth = 0.4;
+        ctx.globalAlpha = 1;
+        // ctx.moveTo(this.x+3, this.y+3);
+        // ctx.lineTo(this.x-3 + this.width, this.y+3);
+        // ctx.lineTo(this.x-3 + this.width, this.y + this.height-3);
+        // ctx.lineTo(this.x+3, this.y + this.height-3);
+        // ctx.lineTo(this.x+3, this.y+3);
         ctx.moveTo(this.x, this.y);
         ctx.lineTo(this.x + this.width, this.y);
         ctx.lineTo(this.x + this.width, this.y + this.height);
@@ -149,21 +155,21 @@ var area = {
 
     
     outside: [[0,0],
-    [0,1600],
-    [1000,1600],
+    [0,1200],
+    [1000,1200],
     [1000,0],
     [0,0]],
 
     outsideSize: [1000, 1600],
 
     plan: [
-        new Pad(yFirst, begin, padLengte, dikte, 26, "divers", 3, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 1), padLengte, dikte, 26, "actie", 4, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 2), padLengte, dikte, 26, "divers", 5, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 3), padLengte, dikte, 26, "divers", 6, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 4), padLengte, dikte, 26, "divers", 7, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 5), padLengte, dikte, 26, "divers", 8, false, true, padbreedte),
-        new Pad(yFirst, yReturn(2, 6), padLengte, dikte, 26, "divers", 9, false, true, padbreedte),
+        new Pad(yFirst, begin, padLengte, dikte, 20, "divers", 3, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 1), padLengte, dikte, 20, "actie", 4, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 2), padLengte, dikte, 20, "divers", 5, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 3), padLengte, dikte, 20, "divers", 6, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 4), padLengte, dikte, 20, "divers", 7, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 5), padLengte, dikte, 20, "divers", 8, false, true, padbreedte),
+        new Pad(yFirst, yReturn(2, 6), padLengte, dikte, 20, "divers", 9, false, true, padbreedte),
 
         new Pad(ySecond, begin, padLengte, dikte, 26, "divers", 16, false, true, padbreedte),
         new Pad(ySecond, yReturn(2, 1), padLengte, dikte, 26, "divers", 15, false, true, padbreedte),
@@ -258,7 +264,7 @@ function update() {
 }
 
 function setup() {
-    mark = new dot(10, 120, "../static/london.jpg", 25);
+    mark = new dot(10, 120, "../static/34647.jpg", 20);
     area.start();
     currentClass = findClass(groch[index].location[0]).getMeterCoord(groch[index].location[1])
     mark.x = currentClass[0];
