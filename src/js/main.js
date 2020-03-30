@@ -19,7 +19,7 @@ function resizeDiv() {
     document.getElementById("heightItem").style.height = `${amount}px`;
 }
 
-var groch = [producten.appels, producten.kaas, producten.brood, producten.chips, producten.bonen];
+var groch = [producten.appels, producten.bonen];
 
 var index = 0
 var start = groch[index].name;
@@ -51,6 +51,7 @@ function next() {
 }
 
 function prev() {
+    console.log("prev")
     if(index == 0) {
         index = groch.length-1;
     } else {index--}

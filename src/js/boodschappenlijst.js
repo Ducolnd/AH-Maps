@@ -1,16 +1,27 @@
-var product = $("#productText");
-var grocheries = [];
+var productInput = $("#productText");
+var htmlString = "";
+// var groch = [producten....]
 
 function addProduct() {
-    if(!(product.val() === "")) {
-		grocheries.push(product.val());
-		product.val("");
+    if(!(product.val() == "")) {
+		groch.push(producten[ productInput.val().toLowerCase() ]);
+		productInput.val("");
 		refreshTable();
 	}
 }
 
 function refreshTable() {
-	// for()
+	for(var product of groch) {
+		htmlString += `<tr>
+		<td>${product.name}</td>
+		<td>${product.name}</td>
+		<td>${product.name}</td>
+		<td>${product.name}</td>
+		
+		</tr>`
+	}
+	$("#productTable").html(htmlString);
+	htmlString = ""
 }
 
 function removeProduct(product) {
@@ -28,23 +39,7 @@ function setCookie(cname, cvalue, exdays) {
     document.cookie = cname + "=" + cvalue.join(" ") + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-var a = []
+// var a = []
 
 function barCodeReturn() {
     return Math.ceil(Math.random() * 10e9);
@@ -53,3 +48,7 @@ function barCodeReturn() {
 // for(var i = 0; i < 1000; i++) {
 //     a.push(barCodeReturn())
 // }
+
+function setup() {
+	refreshTable()
+}
