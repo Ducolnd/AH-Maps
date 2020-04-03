@@ -1,6 +1,14 @@
 var productInput = $("#productText");
 var htmlString = "";
 var readyInList = $("#readyInList");
+var save = false;
+
+window.onbeforeunload = function (){
+	window.alert("Je boodschappenlijst gaat verloren.");
+	console.log("chese")
+	return null;
+};
+
 readyInList.hide();
 // var groch = [producten....]
 
