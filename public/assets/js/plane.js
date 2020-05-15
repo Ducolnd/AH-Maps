@@ -227,10 +227,10 @@ function dot(x, y, imageUrl, imgWidth) {
     this.maxDiameter = 20;
     this.diameter = 0;
 
-    this.img = new Image();
-    this.img.src = imageUrl;
-    this.imgWidth = imgWidth
-    this.imgHeight = this.img.height/(this.img.width / imgWidth)
+    // this.img = new Image();
+    // this.img.src = imageUrl;
+    // this.imgWidth = imgWidth
+    // this.imgHeight = this.img.height/(this.img.width / imgWidth)
 
     this.update = function(){
         this.diameter += 0.4
@@ -244,7 +244,7 @@ function dot(x, y, imageUrl, imgWidth) {
         ctx.arc(this.x, this.y, this.diameter, 0, 2 * Math.PI, false);
         ctx.fill();
         ctx.globalAlpha = 0.7;
-        ctx.drawImage(this.img, this.x-(this.imgWidth/2), this.y-(this.imgHeight/2), this.imgWidth, this.imgHeight);
+        // ctx.drawImage(this.img, this.x-(this.imgWidth/2), this.y-(this.imgHeight/2), this.imgWidth, this.imgHeight);
         
     }
 }
